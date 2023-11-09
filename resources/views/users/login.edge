@@ -1,0 +1,38 @@
+@layout('layouts/main')
+
+@section('content')
+
+  <form action="{{ route('users.authlogin') }}" method="POST">
+    <div class="text-primary-800">
+      <h1 class="text-2xl font-semibold text-primary-800 text-center">Entre com sua conta</h1>
+      <div class="espaco">
+        @!form.legend({ name: 'Email'})
+        @!form.input({ name: 'email', type: 'email' })
+      </div>
+
+      <div class="espaco">
+        @!form.legend({ name: 'Senha'})
+        @!form.input({ name: 'password', type: 'password' })
+      </div>
+
+      <div class="espaco">
+        @form.button()
+          Entrar
+        @end
+      </div>
+
+
+     <div class="espaco">
+        <p class="text-primary-800">
+          Clique
+          <strong>
+            <a href="{{ route('users.create') }}">aqui</a>
+          </strong>
+          caso não tenha realizado o cadastro
+        </p>
+     </div>
+
+    </div>
+  </form>
+
+@end

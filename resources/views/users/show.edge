@@ -1,0 +1,59 @@
+@layout('layoutslogin/main')
+
+@section('content')
+
+  <div>
+    <div class="perfil-div">
+      <h1 class="text-4xl font-semibold text-primary-800 text-center">Perfil</h1>
+      <p class="text-primary-800">
+        Conta: {{ user.email }}
+      </p>
+        @if (user.id === session.get('userId'))
+          <form action="{{ route('users.authlogout') }}" method="POST" class="inline">
+            @form.button()
+              Sair
+            @end
+          </form>
+          <form action="{{ route('users.update', { id: user.id }) }}" method="GET" class="inline">
+            @form.button()
+              Editar Perfil 
+            @end
+          </form>
+        @endif
+    </div>
+
+    <div>
+      <!-- <h1>Posts feitos por {{ user.email }}</h1> -->
+      <div>
+        <h2 class="text-2xl font-semibold text-primary-800 text-center">Posts Publicados</h2>
+      </div>
+
+      <div class="blog-posts-container">
+        @each(post in posts)
+          <div>
+            <a href="{{ route('posts.show', { id: post.id }) }}">
+              <h3 class="text-2xl font-bold text-primary-800">{{ post.title }}</h3>
+              <p class="text-primary-800">{{ post.content.slice(0, 20) }} ...</p>
+            </a>
+            @if (post.userId === session.get('userId'))
+              <div>
+                <form action="{{ route('posts.update', { id: post.id }) }}" method="GET" class="inline">
+                  <button class="button-style-post">
+                    Editar
+                  </button>
+                </form>
+                <form action="{{ route('posts.destroy', { id: post.id }) }}" method="GET" class="inline">
+                  <button class="button-style-post">
+                    Apagar
+                  </button>
+                </form>
+              </div>
+            @endif
+          </div>
+        @end
+      </div>
+
+
+    </div>
+  </div>
+@end

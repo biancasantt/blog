@@ -1,0 +1,18 @@
+<header class="flex flex-row justify-center m-1">
+  <div class="flex flex-row justify-between max-w-7xl w-full m-2 items-center">
+    <div class="flex flex-row font-semibold text-2xl tracking-wide text-primary-900">
+      <a href="{{ route('posts.index') }}">Viva Bem</a>
+    </div>
+    <nav class="flex flex-row gap-2">
+      @form.button({ href: route('posts.create') })
+        Criar Post
+      @end
+      @form.button({ href: route('users.show', { id: session.get('userId') }) })
+        Perfil
+      @end
+      @form.button({ href: route('posts.index') })
+        Página Inicial
+      @end
+    </nav>
+  </div>
+</header>

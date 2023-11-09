@@ -1,0 +1,29 @@
+@layout('layoutslogin/main')
+
+@section('content')
+  <div>
+    <h1 class="text-2xl font-semibold text-primary-800 text-center">Meus Dados</h1>
+
+    <form action="{{ route('users.patch', { id: user.id }, { qs: { _method: 'PATCH' }}) }}" method="POST">
+      <div class="text-primary-800"> 
+        <div class="espaco">
+          <label>
+            Email:
+          </label>
+          <input type="email" name="email" placeholder="Email" value="{{ user.email }}" />
+        </div>
+        <div class="espaco">
+          <label>
+            Senha:
+          </label>
+          <input type="password" name="password" placeholder="Senha" />
+        </div>
+        <div class="espaco">
+          @form.button()
+              Atualizar
+          @end
+        </div>
+      </div>
+    </form>
+  </div>
+@end

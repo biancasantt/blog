@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*div dos posts da pagina inicial*/
+.blog-posts-container {
+    border: 2px solid transparent; /* largura da borda de 2 pixels e cor cinza */
+    padding: 20px; /* preenchimento interno de 20 pixels */
+}
+
+/*criando espaço entre as divs*/
+.espaco {
+    border: 6px solid transparent; /* adicione espaço de 20 pixels entre as divs */
+}
+
+/*borda para div*/
+.blog-div-perfil {
+    border: 1px solid rgba(105, 119, 134, 0.377);
+    border-radius: 12px;
+    padding: 10px;
+    display: block; /* Garante que o div fique abaixo do outro */
+    margin-bottom: 10px; /* Adiciona 10 pixels de espaço entre cada div */
+}
+
+/*button dos posts*/
+.button-style-post {
+    width: 60px;
+    height: 30px;
+    border-radius: 12px;
+    color: rgba(15, 69, 131, 0.781);
+    border: 1px solid rgba(15, 69, 131, 0.781);
+    font-size: 12px;
+    text-align: center;
+    padding: 5px 10px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 6px;
+    /* Outros estilos desejados */
+}
+
+.button-style-post:hover {
+    background-color: rgba(0, 89, 255, 0.116);
+}
+
+/* para colocar um botão ao lado do outro*/
+.inline {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+/*editando a "caixa" do usuário (div)*/
+.perfil-div {
+    border-radius: 6px;
+    background-color: #dfe2e43b; /* adicione o código da cor desejada aqui */
+    text-align: center;
+    width: 600px; /* ajuste a largura da div conforme necessário */
+    height: 120px; /* ajuste a altura da div conforme necessário */
+}
+
+/*editando detalhe do post (div)*/
+.detalhe-post-div {
+    border-radius: 6px;
+    width: 700px; /* ajuste a largura da div conforme necessário */
+    height: 1000px; /* ajuste a altura da div conforme necessário */
+}

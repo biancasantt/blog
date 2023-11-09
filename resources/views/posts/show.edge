@@ -1,0 +1,26 @@
+@layout('layoutslogin/main')
+
+@section('content')
+  <div class="detalhe-post-div">
+    <div class="espaco">
+      <h1 class="text-5xl font-bold text-primary-800">
+        {{ post.title }}
+      </h1>
+    </div>
+
+    <div class="espaco">
+      <p class="text-primary-800">
+        {{ post.content }}
+      </p>
+    </div>
+
+    <div class="espaco">
+      <p class="text-primary-800">
+        Escrito por: 
+        <strong>
+          <a href="{{ route('users.show', { id: post.user.id }) }}">{{ post.user.email }}</a>
+        </strong>
+      </p>
+    </div>
+  </div>
+@end

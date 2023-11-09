@@ -1,0 +1,24 @@
+@layout('layouts/main')
+
+@section('content')
+
+  <div class="flex w-full max-w-7xl mx-auto">
+    <div class="flex flex-col gap-6 mt-10">
+      <div class="text-7xl font-semibold text-primary-900">
+        Bem-vindo ao "Viva Bem"!
+      </div>
+      <p class="text-sm text-primary-700">
+        Nós acreditamos que uma vida saudável é fundamental para alcançar o bem-estar e a felicidade. No "Viva Bem", oferecemos orientações práticas, dicas úteis e informações valiosas para ajudar você a trilhar o caminho em direção a uma vida mais saudável e equilibrada.
+      </p>
+      <p class="text-sm text-primary-700">
+        Explore e publique posts sobre nutrição, exercícios físicos, saúde mental, e descubra como pequenas mudanças podem ter um impacto significativo em sua jornada de bem-estar.
+      </p>
+      <div>
+        @form.button({ href: route('users.create') })
+          Comece aqui
+        @end
+      </div>
+    </div>
+  </div>
+
+@end

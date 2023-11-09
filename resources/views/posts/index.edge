@@ -1,0 +1,19 @@
+@layout('layoutslogin/main')
+
+@section('content')
+  <div>
+    <h1 class="text-3xl font-semibold text-primary-900 text-center">
+    Seu guia para uma Saúde Total
+    </h1>
+
+    @each(post in posts)
+      <div class="blog-posts-container">
+        <a href="{{ route('posts.show', { id: post.id }) }}">
+          <p class="text-primary-800"><strong>{{ post.user ? post.user.email : 'N/A' }}</strong> (usuário)</p>
+          <h2 class="text-2xl font-bold text-primary-800">{{ post.title }}</h2>
+          <p class="text-primary-800">{{ post.content.slice(0, 20) }} ...</p>
+        </a>
+      </div>
+    @end
+  </div>
+@end
